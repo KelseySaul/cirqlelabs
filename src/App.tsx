@@ -205,26 +205,10 @@ export default function App() {
       {/* Aesthetic Grain Overlay */}
       <div className="fixed inset-0 grain pointer-events-none z-50 opacity-20" />
       
-      {/* Figma-Style Background Dynamics */}
+      {/* Figma-Style Background Dynamics - static for performance */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <motion.div 
-          animate={{ 
-            x: [0, 50, 0], 
-            y: [0, 50, 0],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-[10%] -left-[10%] w-[70%] h-[70%] rounded-full bg-brand-blue/10 blur-[140px]" 
-        />
-        <motion.div 
-          animate={{ 
-            x: [0, -50, 0], 
-            y: [0, -50, 0],
-            scale: [1.2, 1, 1.2]
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-[10%] -right-[10%] w-[60%] h-[60%] rounded-full bg-brand-purple/10 blur-[140px]" 
-        />
+        <div className="absolute -top-[10%] -left-[10%] w-[70%] h-[70%] rounded-full bg-brand-blue/10 blur-[140px]" />
+        <div className="absolute -bottom-[10%] -right-[10%] w-[60%] h-[60%] rounded-full bg-brand-purple/10 blur-[140px]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.05),transparent_70%)]" />
       </div>
 
@@ -300,7 +284,7 @@ export default function App() {
           <div className="mt-8 pt-8 border-t border-white/10">
             <motion.button
               whileTap={{ scale: 0.98 }}
-              className="w-full py-4 bg-brand-blue text-white rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] shadow-[0_0_30px_rgba(59,130,246,0.3)]"
+              className="w-full py-4 bg-brand-blue text-white rounded-2xl font-black uppercase tracking-[0.2em] text-[10px]"
             >
               Connect
             </motion.button>
@@ -326,7 +310,7 @@ export default function App() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`hidden md:block px-6 py-2.5 rounded-xl transition-all text-xs font-black uppercase tracking-widest ${isScrolled ? 'bg-brand-blue text-white shadow-[0_0_20px_rgba(59,130,246,0.3)]' : 'bg-white text-slate-900 hover:bg-brand-blue hover:text-white'}`}
+              className={`hidden md:block px-6 py-2.5 rounded-xl transition-all text-xs font-black uppercase tracking-widest ${isScrolled ? 'bg-brand-blue text-white' : 'bg-white text-slate-900 hover:bg-brand-blue hover:text-white'}`}
             >
               Connect
             </motion.button>
@@ -344,13 +328,8 @@ export default function App() {
       {/* Hero: Immersive Centerpiece */}
       <section className="relative min-h-[90vh] flex items-center pt-32 md:pt-48 pb-12 px-6 md:px-12">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#020617]/60 z-10" />
-          <img 
-            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070" 
-            alt="Intelligence Background"
-            className="w-full h-full object-cover grayscale opacity-20"
-            referrerPolicy="no-referrer"
-          />
+          <div className="absolute inset-0 bg-[#020617]/80 z-10" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.12),transparent_60%),radial-gradient(ellipse_at_bottom_right,rgba(139,92,246,0.08),transparent_60%)]" />
         </div>
         <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center text-center">
           <motion.div 
@@ -361,7 +340,7 @@ export default function App() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 1.2, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl md:text-[6.5rem] lg:text-[7.5rem] font-black tracking-tighter leading-[0.9] mb-10 md:mb-12 text-white"
+              className="text-5xl sm:text-6xl md:text-[6.5rem] lg:text-[7.5rem] font-black tracking-tighter leading-[0.9] mb-10 md:mb-12 text-white"
             >
               Connecting Visionaries, <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-brand-purple to-brand-indigo italic pr-4">Igniting Ventures.</span>
             </motion.h1>
@@ -450,13 +429,6 @@ export default function App() {
 
       {/* Foundry: Modular Accelerated Journey */}
       <section className="py-16 md:py-28 px-6 md:px-12 bg-[#020617]/50 relative" id="foundry">
-        <div className="absolute bottom-0 right-0 w-1/2 h-full opacity-10 pointer-events-none grayscale brightness-50">
-           <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070" 
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-           />
-        </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-8">
             <SectionHeading>
@@ -562,24 +534,10 @@ export default function App() {
       {/* The Cirqle: Exclusive Governance & Network */}
       <section className="py-16 md:py-28 px-6 md:px-12 relative bg-[#020617] overflow-hidden" id="the-cirqle">
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(139,92,246,0.08),transparent)] pointer-events-none" />
-        {/* iPhone-style Background Aesthetics */}
+        {/* Static background aesthetics */}
         <div className="absolute inset-0 pointer-events-none">
-            <motion.div 
-                animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.3, 0.5, 0.3]
-                }}
-                transition={{ duration: 10, repeat: Infinity }}
-                className="absolute top-1/4 -right-20 w-96 h-96 bg-brand-blue/10 rounded-full blur-[100px]"
-            />
-            <motion.div 
-                animate={{ 
-                    scale: [1.2, 1, 1.2],
-                    opacity: [0.2, 0.4, 0.2]
-                }}
-                transition={{ duration: 12, repeat: Infinity }}
-                className="absolute bottom-1/4 -left-20 w-[30rem] h-[30rem] bg-brand-indigo/10 rounded-full blur-[120px]"
-            />
+            <div className="absolute top-1/4 -right-20 w-96 h-96 bg-brand-blue/10 rounded-full blur-[100px]" />
+            <div className="absolute bottom-1/4 -left-20 w-[30rem] h-[30rem] bg-brand-indigo/10 rounded-full blur-[120px]" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -636,6 +594,7 @@ export default function App() {
                   alt="Network Background"
                   className="w-full h-full object-cover opacity-10 grayscale"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                />
             </div>
             <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/10 to-transparent" />
@@ -665,12 +624,8 @@ export default function App() {
       {/* CTA: Final Movement */}
       <section className="py-16 md:py-28 px-6 md:px-12 bg-[#020617]" id="cta">
         <div className="relative max-w-4xl mx-auto text-center border border-white/10 p-12 md:p-20 rounded-[2.5rem] md:rounded-[4rem] overflow-hidden">
-          <div className="absolute inset-0 -z-10 opacity-10">
-             <img 
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2070" 
-                className="w-full h-full object-cover grayscale"
-                referrerPolicy="no-referrer"
-             />
+          <div className="absolute inset-0 -z-10 opacity-30">
+             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.15),transparent_60%)]" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-transparent -z-10" />
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-8 tracking-tight italic text-white leading-tight decoration-brand-blue decoration-4 underline-offset-8">
