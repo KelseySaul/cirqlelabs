@@ -342,7 +342,7 @@ export default function App() {
               transition={{ delay: 0.4, duration: 1.2, ease: "easeOut" }}
               className="text-5xl sm:text-6xl md:text-[6.5rem] lg:text-[7.5rem] font-black tracking-tighter leading-[0.9] mb-10 md:mb-12 text-white"
             >
-              Connecting Visionaries, <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-brand-purple to-brand-indigo italic pr-4">Igniting Ventures.</span>
+              Connecting Visionaries, <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-brand-purple to-brand-indigo pr-4">Igniting Ventures.</span>
             </motion.h1>
             
             <motion.p 
@@ -628,20 +628,13 @@ export default function App() {
              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.15),transparent_60%)]" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-transparent -z-10" />
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-8 tracking-tight italic text-white leading-tight decoration-brand-blue decoration-4 underline-offset-8">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-8 tracking-tight text-white leading-tight decoration-brand-blue decoration-4 underline-offset-8">
             Join the <br/>movement.
           </h2>
           <p className="text-lg md:text-xl text-slate-400 mb-10 md:mb-14 max-w-xl mx-auto leading-relaxed font-inter">
             Reserve your place in the world’s most dynamic community and be part of the momentum shaping
             the future of entrepreneurship.
           </p>
-          <motion.button 
-            whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(59,130,246,0.5)' }}
-            whileTap={{ scale: 0.95 }}
-            className="px-10 md:px-16 py-5 md:py-7 bg-brand-blue text-white font-black rounded-3xl text-xs md:text-sm tracking-[0.2em] uppercase transition-all shadow-lg"
-          >
-            Apply Membership
-          </motion.button>
         </div>
       </section>
 
