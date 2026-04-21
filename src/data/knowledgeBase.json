@@ -1,0 +1,58 @@
+{
+  "company": "CirqleLabs",
+  "tagline": "Connecting Visionaries, Igniting Ventures.",
+  "description": "CirqleLabs are architects of opportunity, cultivating a thriving ecosystem that emboldens startups, entrepreneurs, investors and mentors to shape the future of business evolution.",
+  "sections": {
+    "Ecosystem": {
+      "title": "A global network of innovation",
+      "content": "A worldwide network uniting trailblazing entrepreneurs, sage advisors and strategic investors. Empowers a diverse community of builders to unleash the full potential of startups.",
+      "stats": {
+        "Direct Matching": "94%",
+        "Member Growth": "240%"
+      }
+    },
+    "Foundry": {
+      "title": "The Foundry (Build, Shape and Accelerate your Startup Journey)",
+      "phases": [
+        "Smart matching with accelerators and incubators aligned to your vision",
+        "Tailored recommendations based on stage, sector and growth trajectory",
+        "Structured guidance to navigate and scale your venture",
+        "Centralised startup profile to manage applications and visibility"
+      ]
+    },
+    "Capital": {
+      "title": "Venture Capital",
+      "subtitle": "Discover the next generation of high-potential startups",
+      "points": [
+        "Curated directory of emerging and innovative startups",
+        "Early visibility into upcoming ventures before public launch",
+        "Diverse investment opportunities across stages and models",
+        "Insights into emerging industries and future market trends",
+        "Expert perspectives to support informed investment decisions"
+      ]
+    },
+    "The Cirqle": {
+      "title": "A network for capital and venture execution",
+      "points": [
+        "Engage operators, investors and advisors actively deploying capital",
+        "Access curated investor networks and high-quality deal flow",
+        "Join a vetted network of founders, investors and practitioners",
+        "Participate in high-signal discussions on execution and scaling"
+      ]
+    },
+    "The Collective": {
+      "title": "Elite Global Community",
+      "stats": {
+        "Elite Members": "8k+",
+        "Global Chapters": "12+",
+        "Industries": "15+"
+      }
+    }
+  },
+  "contacts": {
+    "email": "intelligence@cirqlelabs.com",
+    "phone": "+1 (555) 000-8888",
+    "whatsapp": "+1 (555) 000-8888",
+    "location": "Global Operations Center"
+  }
+}
