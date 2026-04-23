@@ -11,6 +11,7 @@
   
   --font-sans: "Satoshi", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-inter: "Inter", sans-serif;
+  --font-maharlika: "Maharlika", sans-serif;
 }
 
 @layer utilities {

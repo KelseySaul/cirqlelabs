@@ -172,6 +172,7 @@ export default function App() {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
+  const [isLoading, setIsLoading] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -222,10 +223,10 @@ export default function App() {
           }}
           whileHover={{ scale: 1.1, y: -2 }}
           whileTap={{ scale: 0.9 }}
-          className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-2xl cursor-pointer transition-all ${isWhatsappOpen ? 'bg-slate-800 text-white border border-white/20' : 'bg-white text-[#25D366]'}`}
+          className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-2xl cursor-pointer transition-all overflow-hidden ${isWhatsappOpen ? 'bg-slate-800 text-white border border-white/20' : 'bg-white/10 backdrop-blur-md border border-white/10'}`}
           title="Contact us"
         >
-          {isWhatsappOpen ? <X size={16} /> : <MessageCircle size={20} />}
+          {isWhatsappOpen ? <X size={20} /> : <img src="/assets/images/cirqlelabs1.png" alt="CirqleLabs" className="w-full h-full object-contain p-1" />}
         </motion.button>
       </div>
 
@@ -295,8 +296,9 @@ export default function App() {
       {/* Nav: Ultra-Minimal Apple-Style */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-4 md:px-12 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className={`max-w-7xl mx-auto flex items-center justify-between transition-all duration-500 mt-6 ${isScrolled ? 'bg-white/5 backdrop-blur-xl border border-white/10 py-3 px-6 md:px-8 rounded-full shadow-2xl' : 'bg-transparent py-4 border border-transparent'}`}>
-          <div className="flex items-center gap-4">
-            <span className={`font-extrabold text-lg md:text-xl tracking-tighter uppercase shrink-0 transition-colors ${isScrolled ? 'text-white' : 'text-brand-blue'}`}>CirqleLabs</span>
+          <div className="flex items-center gap-3">
+            <img src="/assets/images/cirqlelabs1.png" alt="CirqleLabs Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
+            <span className={`font-maharlika text-lg md:text-xl tracking-tighter uppercase shrink-0 transition-colors ${isScrolled ? 'text-white' : 'text-brand-blue'}`}>CirqleLabs</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -644,7 +646,12 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
             {/* Brand Section */}
             <div className="space-y-8">
-              <span className="font-black text-2xl tracking-tighter text-brand-blue uppercase">CirqleLabs</span>
+              <div className="flex items-center gap-3">
+                <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center overflow-hidden rounded-2xl">
+                  <img src="/assets/images/cirqlelabs1.png" alt="CirqleLabs" className="w-full h-full object-contain" />
+                </div>
+                <span className="font-maharlika text-2xl tracking-tighter text-brand-blue uppercase">CirqleLabs</span>
+              </div>
               <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
                 Architects of opportunity, cultivating a global ecosystem for startups and investors.
               </p>
