@@ -86,7 +86,7 @@ const SectionHeading = ({ children, subtitle }: { children: ReactNode; subtitle?
 
 const CountingNumber = ({ value, suffix = "", prefix = "" }: { value: number; suffix?: string; prefix?: string }) => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { damping: 30, stiffness: 60 });
   const displayValue = useTransform(springValue, (latest) => 
@@ -213,7 +213,7 @@ export default function App() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.05),transparent_70%)]" />
       </div>
 
-      {/* Floating Action Center */}
+      {/* Floating Action Center center */}
       <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[60] flex flex-col gap-4 items-end">
         <WhatsAppPopup isOpen={isWhatsappOpen} onClose={() => setIsWhatsappOpen(false)} />
 
@@ -264,8 +264,7 @@ export default function App() {
             {[
               { name: 'The Foundry', href: '#foundry' },
               { name: 'Venture Vault', href: '#vault' },
-              { name: 'The Cirqle', href: '#cirqle' },
-              { name: 'The Collective', href: '#collective' }
+              { name: 'The Cirqle', href: '#cirqle' }
             ].map((item, i) => (
               <motion.a
                 key={item.name}
@@ -305,7 +304,6 @@ export default function App() {
             <NavItem href="#foundry">The Foundry</NavItem>
             <NavItem href="#vault">Venture Vault</NavItem>
             <NavItem href="#cirqle">The Cirqle</NavItem>
-            <NavItem href="#collective">The Collective</NavItem>
           </div>
           
           <div className="flex items-center gap-3">
@@ -372,21 +370,22 @@ export default function App() {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <SectionHeading>
-                A global network of innovation
+                The ultimate fusion reactor of entrepreneurial brilliance
               </SectionHeading>
               <p className="text-slate-400 text-lg leading-relaxed mb-10 font-inter">
-                Our community thrives on a global stage. We have crafted a worldwide network of innovation, 
-                uniting trailblazing entrepreneurs, sage advisors and strategic investors under one virtual roof. 
-                Fuelling global transformation through innovation and collaboration, CirqleLabs empowers a 
-                diverse community of builders.
+                Our community thrives on a global stage. We have crafted a worldwide network of 
+                innovation, uniting trailblazing entrepreneurs, sage advisors and strategic investors 
+                under one virtual roof.
               </p>
               <div className="grid grid-cols-2 gap-8">
                 {[
-                  { label: "Direct Matching", value: "94%" },
-                  { label: "Member Growth", value: "240%" },
+                  { label: "Members", value: 8642 },
+                  { label: "Chapters", value: 18 },
                 ].map((stat, i) => (
                   <div key={i} className="border-l-2 border-brand-blue pl-6">
-                    <div className="text-4xl font-black text-white mb-1">{stat.value}</div>
+                    <div className="text-4xl font-black text-white mb-1">
+                      <CountingNumber value={stat.value} suffix="+" />
+                    </div>
                     <div className="text-[10px] font-black uppercase tracking-widest text-slate-500">{stat.label}</div>
                   </div>
                 ))}
@@ -436,32 +435,66 @@ export default function App() {
             <SectionHeading>
               The Foundry<br/>
               <span className="text-sm md:text-lg font-medium text-slate-400 normal-case tracking-normal">
-                <span className="text-brand-blue font-bold">Build</span>, <span className="text-brand-blue font-bold">Shape</span> and <span className="text-brand-blue font-bold">Accelerate</span> your Startup Journey
+                A structured pathway connecting startups with accelerators, execution partners, and programs aligned to their stage and growth trajectory.
               </span>
             </SectionHeading>
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/10 rounded-[2.5rem] overflow-hidden bg-[#020617]/40 backdrop-blur-sm shadow-2xl">
             {[
-              "Smart matching with accelerators and incubators aligned to your vision",
-              "Tailored recommendations based on stage, sector and growth trajectory",
-              "Structured guidance to navigate and scale your venture",
-              "Centralised startup profile to manage applications and visibility"
-            ].map((text, idx) => (
+              {
+                title: "Smart matching with accelerators and incubators aligned to your vision",
+                bullets: [
+                  "AI-driven discovery engine maps startups to relevant accelerator and incubator programs",
+                  "Semantic matching based on sector signals, stage, and founder intent",
+                  "Filters and ranks opportunities using contextual fit scoring"
+                ]
+              },
+              {
+                title: "Tailored recommendations based on stage, sector and growth trajectory",
+                bullets: [
+                  "Machine learning models assess startup maturity and sector positioning",
+                  "Dynamic recommendation system adapts to traction and growth signals",
+                  "Predictive matching to high-probability success pathways"
+                ]
+              },
+              {
+                title: "Structured guidance to navigate and scale your venture",
+                bullets: [
+                  "AI-assisted roadmap generation across key growth milestones",
+                  "Embedded knowledge layer for funding, scaling, and market entry",
+                  "Decision-support tooling for execution bottlenecks"
+                ]
+              },
+              {
+                title: "Centralised startup profile to manage applications and visibility",
+                bullets: [
+                  "Unified startup data layer for applications, tracking, and investor visibility",
+                  "Real-time updates across ecosystem engagements",
+                  "Integrated visibility engine for discovery by investors and partners"
+                ]
+              }
+            ].map((phase, idx) => (
               <motion.div
                 key={idx}
                 className={`p-10 md:p-12 transition-all duration-500 group flex flex-col h-full ${
                   idx !== 3 ? 'border-b sm:border-b-0 lg:border-r border-white/5' : ''
                 } hover:bg-white/5`}
               >
-                <div className="flex items-center gap-4 mb-10">
+                <div className="flex items-center gap-4 mb-8">
                   <div className="text-[10px] font-black tracking-[0.4em] text-brand-blue uppercase bg-brand-blue/10 px-3 py-1 rounded-full">
                     Phase 0{idx + 1}
                   </div>
                 </div>
-                <p className="text-white leading-relaxed font-medium font-inter text-base md:text-lg mb-12">
-                  {text}
-                </p>
+                <h4 className="text-white font-bold mb-6 text-lg leading-relaxed font-inter">{phase.title}</h4>
+                <ul className="space-y-4 mb-8">
+                  {phase.bullets.map((bullet, bIdx) => (
+                    <li key={bIdx} className="flex items-start gap-3 text-sm text-slate-400 leading-relaxed">
+                      <div className="mt-1.5 w-1 h-1 rounded-full bg-brand-blue/60 shrink-0" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
                 <div className="mt-auto">
                     <div className="w-12 h-0.5 bg-white/10 group-hover:bg-brand-blue transition-colors duration-500" />
                 </div>
@@ -471,48 +504,75 @@ export default function App() {
         </div>
       </section>
 
-      {/* Venture Capital Section */}
+      {/* Venture Vault Section */}
       <section className="py-16 md:py-28 px-6 md:px-12 bg-[#020617]" id="vault">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 md:mb-24">
             <SectionHeading>
-              Venture Capital<br/>
+              Venture Vault<br/>
               <span className="text-sm md:text-lg font-medium text-slate-400 normal-case tracking-normal">
                 Discover the next generation of high-potential startups
               </span>
             </SectionHeading>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-white/10 rounded-[2.5rem] overflow-hidden bg-[#020617]/40 backdrop-blur-sm shadow-2xl">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-0 border border-white/10 rounded-[2.5rem] overflow-hidden bg-[#020617]/40 backdrop-blur-sm shadow-2xl">
             {[
-              "Curated directory of emerging and innovative startups",
-              "Early visibility into upcoming ventures before public launch",
-              "Diverse investment opportunities across stages and models",
-              "Insights into emerging industries and future market trends",
-              "Expert perspectives to support informed investment decisions"
-            ].map((text, idx) => (
+              {
+                title: "Curated directory of emerging and innovative startups",
+                bullets: [
+                  "Continuously updated database of early-stage startups across key sectors",
+                  "Structured tagging by industry, stage, and innovation category",
+                  "Ranked visibility based on traction and relevance signals"
+                ]
+              },
+              {
+                title: "Early visibility into upcoming ventures before public launch",
+                bullets: [
+                  "Access to startups pre-market through founder onboarding and early listings",
+                  "Detection of emerging ventures from early signals and ecosystem activity",
+                  "Deal flow pipeline before public fundraising exposure"
+                ]
+              },
+              {
+                title: "Insights into emerging industries and future market trends",
+                bullets: [
+                  "Aggregated startup and funding activity across sectors and regions",
+                  "Identification of high-growth and emerging verticals through market patterns",
+                  "Trend briefs derived from ecosystem movement and investment flows"
+                ]
+              },
+              {
+                title: "Expert perspectives to support informed investment decisions",
+                bullets: [
+                  "Curated insights from investors, operators, and domain specialists",
+                  "Structured market commentary to support due diligence and evaluation",
+                  "Comparative analysis of sectors, startups, and opportunity areas"
+                ]
+              }
+            ].map((item, idx) => (
               <motion.div
                 key={idx}
-                className={`p-10 md:p-12 transition-all duration-500 group flex flex-col h-full bg-[#020617]/20 hover:bg-white/5 ${
-                  idx < 3 ? 'lg:border-b' : ''
+                className={`p-10 md:p-12 transition-all duration-500 group flex flex-col h-full bg-[#020617]/20 hover:bg-white/5 border-white/5 ${
+                  idx < 2 ? 'lg:border-b' : ''
                 } ${
-                  (idx + 1) % 3 !== 0 ? 'lg:border-r' : ''
-                } ${
-                  (idx + 1) % 2 !== 0 ? 'sm:border-r lg:border-r' : 'sm:border-r-0 lg:border-r'
-                } border-white/5`}
-                style={{ 
-                    borderRightWidth: (idx + 1) % 3 === 0 ? '0px' : '1px',
-                    borderBottomWidth: idx < 3 ? '1px' : '0px'
-                }}
+                  idx % 2 === 0 ? 'lg:border-r' : ''
+                }`}
               >
-                <div className="flex items-center gap-4 mb-10">
+                <div className="flex items-center gap-4 mb-8">
                   <div className="w-8 h-8 rounded-lg bg-white/5 text-white flex items-center justify-center text-[10px] font-black group-hover:bg-brand-blue transition-colors">
                     {idx + 1}
                   </div>
                 </div>
-                <p className="text-white leading-relaxed font-medium font-inter text-base md:text-lg mb-12">
-                  {text}
-                </p>
+                <h4 className="text-white font-bold mb-4 uppercase text-lg tracking-widest">{item.title}</h4>
+                <ul className="space-y-4 mb-8">
+                  {item.bullets.map((bullet, bIdx) => (
+                    <li key={bIdx} className="flex items-start gap-3 text-sm text-slate-400 leading-relaxed">
+                      <div className="mt-1.5 w-1 h-1 rounded-full bg-brand-blue/60 shrink-0" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
                 <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-[9px] font-black uppercase tracking-widest text-brand-blue flex items-center gap-2">
                         Analyze Opportunity <ArrowRight size={12} />
@@ -520,21 +580,12 @@ export default function App() {
                 </div>
               </motion.div>
             ))}
-            {/* Empty filler spot for 3x2 grid if needed, or just let it be 5 items */}
-            <div className="hidden lg:flex p-12 bg-white/5 items-center justify-center border-t border-white/10">
-                <div className="text-center">
-                    <div className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-white/10">
-                        <TrendingUp size={20} className="text-brand-blue" />
-                    </div>
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Scale your portfolio</p>
-                </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* The Cirqle: Exclusive Governance & Network */}
-      <section className="py-16 md:py-28 px-6 md:px-12 relative bg-[#020617] overflow-hidden" id="the-cirqle">
+      <section className="py-16 md:py-28 px-6 md:px-12 relative bg-[#020617] overflow-hidden" id="cirqle">
         <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(139,92,246,0.08),transparent)] pointer-events-none" />
         {/* Static background aesthetics */}
         <div className="absolute inset-0 pointer-events-none">
@@ -552,11 +603,39 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {[
-              "Engage operators, investors and advisors actively deploying capital across emerging ventures",
-              "Access curated investor networks and high-quality venture deal flow",
-              "Join a vetted network of founders, investors and industry practitioners",
-              "Participate in high-signal discussions on execution, scaling and capital allocation"
-            ].map((text, idx) => (
+              {
+                title: "Engage founders, investors and advisors actively deploying capital across emerging ventures",
+                bullets: [
+                  "Direct access to active capital allocators and ecosystem builders",
+                  "Real-time engagement with founders and investors in live deal environments",
+                  "Exposure to ongoing investment and execution activity"
+                ]
+              },
+              {
+                title: "Access curated investor networks and high-quality venture deal flow",
+                bullets: [
+                  "Filtered investor network based on sector and stage focus",
+                  "Curated pipeline of vetted, investment-ready opportunities",
+                  "Reduced noise through pre-qualified deal flow"
+                ]
+              },
+              {
+                title: "Join a vetted network of founders, investors and industry practitioners",
+                bullets: [
+                  "Verified ecosystem membership across founders and investors",
+                  "Structured community of active market participants",
+                  "Trust-based network with relevance filtering"
+                ]
+              },
+              {
+                title: "Participate in high-signal discussions on execution, scaling and capital allocation",
+                bullets: [
+                  "Focused conversations on growth, operations and funding strategy",
+                  "Practitioner-led insights from real-world experience",
+                  "Signal-rich exchange over general discussion noise"
+                ]
+              }
+            ].map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
@@ -573,9 +652,17 @@ export default function App() {
                       <CountingNumber value={idx + 1} prefix="0" />
                     </span>
                   </div>
-                  <p className="text-white text-lg md:text-xl font-medium font-inter leading-relaxed mb-6">
-                    {text}
-                  </p>
+                  <h4 className="text-white text-xl font-bold font-inter leading-relaxed mb-6">
+                    {item.title}
+                  </h4>
+                  <ul className="space-y-4 mb-8">
+                    {item.bullets.map((bullet, bIdx) => (
+                      <li key={bIdx} className="flex items-start gap-3 text-sm text-slate-400 leading-relaxed">
+                        <div className="mt-1.5 w-1 h-1 rounded-full bg-brand-blue/60 shrink-0" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
                   <div className="mt-auto pt-8 flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-500 group-hover:text-brand-blue transition-colors">
                     Join Network <ChevronRight size={14} />
                   </div>
@@ -586,42 +673,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Collective: Modern Minimalist */}
-      <section className="py-16 md:py-28 px-6 md:px-12 bg-[#020617]" id="collective">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-[#050b1f] rounded-[2.5rem] md:rounded-[3rem] p-12 md:p-32 overflow-hidden relative border border-white/5">
-            <div className="absolute inset-0">
-               <img 
-                  src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2070" 
-                  alt="Network Background"
-                  className="w-full h-full object-cover opacity-10 grayscale"
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-               />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/10 to-transparent" />
-            <div className="max-w-5xl mx-auto text-center relative z-10">
-              <SectionHeading subtitle="Ecosystem">
-                <span className="text-white">The Collective</span>
-              </SectionHeading>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 md:gap-20">
-                {[
-                  { value: 8, suffix: "k+", label: "Elite Members" },
-                  { value: 12, suffix: "+", label: "Global Chapters" },
-                  { value: 15, suffix: "+", label: "Industries" }
-                ].map((stat, idx) => (
-                  <div key={idx} className="group">
-                    <div className="text-5xl md:text-[6rem] lg:text-[7rem] font-black text-white group-hover:text-brand-blue transition-all duration-500 tracking-tighter mb-4 md:mb-6 italic hover:scale-105 inline-block">
-                      <CountingNumber value={stat.value} suffix={stat.suffix} />
-                    </div>
-                    <div className="text-slate-500 uppercase tracking-[0.4em] text-[8px] font-bold">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA: Final Movement */}
       <section className="py-16 md:py-28 px-6 md:px-12 bg-[#020617]" id="cta">
@@ -637,6 +688,13 @@ export default function App() {
             Reserve your place in the world’s most dynamic community and be part of the momentum shaping
             the future of entrepreneurship.
           </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-brand-blue text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all"
+          >
+            Apply to Join
+          </motion.button>
         </div>
       </section>
 
@@ -672,11 +730,11 @@ export default function App() {
             <div>
               <h4 className="font-black text-[10px] uppercase tracking-[0.3em] text-white mb-8">Quicklinks</h4>
               <ul className="space-y-4">
-                {['Foundry', 'Capital', 'The Cirqle', 'Ecosystem', 'Collective'].map((link) => (
+                {['Foundry', 'Vault', 'The Cirqle'].map((link) => (
                   <li key={link}>
                     <a href={`#${link.toLowerCase().replace(' ', '-')}`} className="text-slate-400 text-sm hover:text-brand-blue transition-colors flex items-center gap-2 group">
                       <ChevronRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link}
+                      {link === 'Vault' ? 'Venture Vault' : link}
                     </a>
                   </li>
                 ))}
@@ -728,7 +786,7 @@ export default function App() {
 
             <div className="flex flex-col items-center md:items-end gap-2">
               <p className="text-slate-600 text-[9px] font-bold uppercase tracking-[0.2em]">
-                © 2024 CIRQLELABS // INTELLIGENCE SYSTEM DESIGN
+                © 2024 CIRQLELABS
               </p>
               <a 
                 href="https://inkwell-sandy.vercel.app/#home" 
