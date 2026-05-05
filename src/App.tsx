@@ -434,7 +434,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-8">
             <SectionHeading>
               The Foundry<br/>
-              <span className="text-sm md:text-lg font-medium text-slate-400 normal-case tracking-normal">
+              <span className="text-base md:text-xl font-medium text-slate-400 normal-case tracking-normal">
                 A structured pathway connecting startups with accelerators, execution partners, and programs aligned to their stage and growth trajectory.
               </span>
             </SectionHeading>
@@ -482,14 +482,14 @@ export default function App() {
                 } hover:bg-white/5`}
               >
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="text-[10px] font-black tracking-[0.4em] text-brand-blue uppercase bg-brand-blue/10 px-3 py-1 rounded-full">
+                  <div className="text-xs font-black tracking-[0.4em] text-brand-blue uppercase bg-brand-blue/10 px-3 py-1 rounded-full">
                     Phase 0{idx + 1}
                   </div>
                 </div>
-                <h4 className="text-white font-bold mb-6 text-lg leading-relaxed font-inter">{phase.title}</h4>
+                <h4 className="text-white font-bold mb-6 text-xl leading-relaxed font-inter">{phase.title}</h4>
                 <ul className="space-y-4 mb-8">
                   {phase.bullets.map((bullet, bIdx) => (
-                    <li key={bIdx} className="flex items-start gap-3 text-sm text-slate-400 leading-relaxed">
+                    <li key={bIdx} className="flex items-start gap-3 text-base text-slate-400 leading-relaxed">
                       <div className="mt-1.5 w-1 h-1 rounded-full bg-brand-blue/60 shrink-0" />
                       {bullet}
                     </li>
@@ -510,7 +510,7 @@ export default function App() {
           <div className="mb-16 md:mb-24">
             <SectionHeading>
               Venture Vault<br/>
-              <span className="text-sm md:text-lg font-medium text-slate-400 normal-case tracking-normal">
+              <span className="text-base md:text-xl font-medium text-slate-400 normal-case tracking-normal">
                 Discover the next generation of high-potential startups
               </span>
             </SectionHeading>
@@ -560,14 +560,14 @@ export default function App() {
                 }`}
               >
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 text-white flex items-center justify-center text-[10px] font-black group-hover:bg-brand-blue transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 text-white flex items-center justify-center text-xs font-black group-hover:bg-brand-blue transition-colors">
                     {idx + 1}
                   </div>
                 </div>
-                <h4 className="text-white font-bold mb-4 uppercase text-lg tracking-widest">{item.title}</h4>
+                <h4 className="text-white font-bold mb-4 normal-case text-xl tracking-tight">{item.title}</h4>
                 <ul className="space-y-4 mb-8">
                   {item.bullets.map((bullet, bIdx) => (
-                    <li key={bIdx} className="flex items-start gap-3 text-sm text-slate-400 leading-relaxed">
+                    <li key={bIdx} className="flex items-start gap-3 text-base text-slate-400 leading-relaxed">
                       <div className="mt-1.5 w-1 h-1 rounded-full bg-brand-blue/60 shrink-0" />
                       {bullet}
                     </li>
@@ -596,7 +596,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto relative z-10">
           <SectionHeading>
             The Cirqle<br/>
-            <span className="text-sm md:text-lg font-medium text-slate-400 normal-case tracking-normal">
+            <span className="text-base md:text-xl font-medium text-slate-400 normal-case tracking-normal">
               A network for capital and venture execution
             </span>
           </SectionHeading>
@@ -648,16 +648,16 @@ export default function App() {
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-2xl rounded-[2.5rem] border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-white/10" />
                 <div className="relative p-10 md:p-12 h-full flex flex-col">
                   <div className="w-10 h-10 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-blue transition-colors duration-500">
-                    <span className="text-brand-blue font-black text-sm group-hover:text-white transition-colors duration-500">
+                    <span className="text-brand-blue font-black text-base group-hover:text-white transition-colors duration-500">
                       <CountingNumber value={idx + 1} prefix="0" />
                     </span>
                   </div>
-                  <h4 className="text-white text-xl font-bold font-inter leading-relaxed mb-6">
+                  <h4 className="text-white text-2xl font-bold font-inter leading-relaxed mb-6">
                     {item.title}
                   </h4>
                   <ul className="space-y-4 mb-8">
                     {item.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="flex items-start gap-3 text-sm text-slate-400 leading-relaxed">
+                      <li key={bIdx} className="flex items-start gap-3 text-base text-slate-400 leading-relaxed">
                         <div className="mt-1.5 w-1 h-1 rounded-full bg-brand-blue/60 shrink-0" />
                         {bullet}
                       </li>
@@ -693,7 +693,7 @@ export default function App() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-brand-blue text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all"
           >
-            Apply to Join
+            Join
           </motion.button>
         </div>
       </section>
