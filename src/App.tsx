@@ -33,7 +33,8 @@ import {
   VolumeX,
   X,
   Send,
-  Bot
+  Bot,
+  Lock
 } from 'lucide-react';
 import React, { useState, useEffect, ReactNode, useRef } from 'react';
 import { getAIResponse } from './services/aiService';
@@ -395,33 +396,27 @@ export default function App() {
             <div className="grid grid-cols-2 gap-6 relative">
               <div className="absolute inset-0 bg-brand-blue/5 blur-[120px] -z-10" />
               {[
-                { title: "Neural", icon: Rocket, gradient: "from-blue-900/40 to-transparent", border: "border-blue-500/20", desc: "Proprietary intelligence engines accelerating venture velocity.", status: "Active" },
-                { title: "Hybrid", icon: Zap, gradient: "from-purple-900/40 to-transparent", border: "border-purple-500/20", desc: "Unified capital models bridging digital and physical assets.", status: "Live" },
-                { title: "Secure", icon: ShieldCheck, gradient: "from-indigo-900/40 to-transparent", border: "border-indigo-500/20", desc: "Encrypted architecture protecting cross-border IP.", status: "Secured" },
-                { title: "Global", icon: Users, gradient: "from-emerald-900/40 to-transparent", border: "border-emerald-500/20", desc: "Synchronous access to world-class sector masters.", status: "Connected" }
+                { title: "Neural", icon: Rocket, desc: "Proprietary intelligence engines accelerating venture velocity.", status: "Active" },
+                { title: "Hybrid", icon: Zap, desc: "Unified capital models bridging digital and physical assets.", status: "Live" },
+                { title: "Secure", icon: ShieldCheck, desc: "Encrypted architecture protecting cross-border IP.", status: "Secured" },
+                { title: "Global", icon: Users, desc: "Synchronous access to world-class sector masters.", status: "Connected" }
               ].map((item, idx) => (
-                <motion.div 
-                  key={idx} 
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className={`glass bg-gradient-to-br ${item.gradient} ${item.border} p-6 rounded-[1.8rem] transition-all duration-500 hover:shadow-2xl flex flex-col items-start`}
+                <motion.a 
+                  key={idx}
+                  href="#"
+                  whileHover={{ y: -6 }}
+                  className="group relative bg-slate-900/50 hover:bg-slate-800/80 border border-white/10 hover:border-brand-blue/30 p-7 rounded-[1.5rem] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(59,130,246,0.15)] flex flex-col items-start cursor-pointer"
                 >
-                  <div className="flex justify-between items-center w-full mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-white shadow-sm border border-white/10 font-bold">
-                      <item.icon size={16} strokeWidth={2.5} />
-                    </div>
-                    <span className="text-[7px] font-black uppercase tracking-widest text-slate-400 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-                      {item.status}
-                    </span>
-                  </div>
-                  <h3 className="font-black text-[9px] uppercase tracking-[0.4em] mb-2 text-white">{item.title}</h3>
-                  <p className="text-[11px] text-slate-400 font-inter leading-relaxed mb-6 line-clamp-2">
+                  <h3 className="font-bold text-lg text-white mb-3">{item.title}</h3>
+                  <p className="text-[13px] text-slate-400 font-inter leading-relaxed mb-8 line-clamp-2">
                     {item.desc}
                   </p>
-                  <div className="mt-auto w-full flex items-center justify-between group cursor-pointer pt-4 border-t border-white/5">
-                    <span className="text-[8px] font-black text-brand-blue uppercase tracking-widest">Detail View</span>
-                    <ArrowRight size={10} className="text-brand-blue transition-transform group-hover:translate-x-1" />
+                  
+                  <div className="mt-auto w-full flex items-center justify-between pt-4 border-t border-white/5 group-hover:border-white/10 transition-colors">
+                    <span className="text-[11px] font-bold text-brand-blue tracking-wide">Detail View</span>
+                    <ArrowRight size={14} className="text-brand-blue transition-transform group-hover:translate-x-1" />
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
           </div>
