@@ -327,7 +327,7 @@ export default function App() {
       </nav>
 
       {/* Hero: Immersive Centerpiece */}
-      <section className="relative min-h-[90vh] flex items-center pt-32 md:pt-48 pb-12 px-6 md:px-12">
+      <section className="relative min-h-[80vh] flex items-center pt-28 md:pt-40 pb-12 px-6 md:px-12">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#020617]/80 z-10" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.12),transparent_60%),radial-gradient(ellipse_at_bottom_right,rgba(139,92,246,0.08),transparent_60%)]" />
