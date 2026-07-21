@@ -640,17 +640,17 @@ export default function App() {
                 whileHover={{ y: -8, scale: 1.01 }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-white/5 backdrop-blur-2xl rounded-[2.5rem] border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-white/10" />
-                <div className="relative p-10 md:p-12 h-full flex flex-col">
-                  <div className="w-10 h-10 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-blue transition-colors duration-500">
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-2xl rounded-[2rem] border border-white/10 shadow-2xl transition-all duration-500 group-hover:bg-white/10" />
+                <div className="relative p-6 md:p-8 h-full flex flex-col">
+                  <div className="w-10 h-10 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors duration-500">
                     <span className="text-brand-blue font-black text-base group-hover:text-white transition-colors duration-500">
                       <CountingNumber value={idx + 1} prefix="0" />
                     </span>
                   </div>
-                  <h4 className="text-white text-2xl font-bold font-inter leading-relaxed mb-6">
+                  <h4 className="text-white text-xl font-bold font-inter leading-relaxed mb-5">
                     {item.title}
                   </h4>
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-3 mb-6">
                     {item.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex items-start gap-3 text-base text-slate-400 leading-relaxed">
                         <div className="mt-1.5 w-1 h-1 rounded-full bg-brand-blue/60 shrink-0" />
